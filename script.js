@@ -253,3 +253,23 @@ function floatScreenshots() {
 document.addEventListener("DOMContentLoaded", () => {
     floatScreenshots();
 });
+
+// 3D tilt effect for screenshots
+const screenshots = document.querySelectorAll("img");
+
+screenshots.forEach((img) => {
+  img.addEventListener("mousemove", (e) => {
+    const rect = img.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateX = ((y / rect.height) - 0.5) * 20;
+    const rotateY = ((x / rect.width) - 0.5) * -20;
+
+    img.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  img.addEventListener("mouseleave", () => {
+    img.style.transform = "perspective(500px) rotateX(0deg) rotateY(0deg)";
+  });
+});
