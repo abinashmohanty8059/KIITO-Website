@@ -215,3 +215,14 @@ function initMobileMenu() {
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
 });
+
+document.addEventListener("mousemove", (e) => {
+    const moveX = (e.clientX / window.innerWidth) * 20;
+    const moveY = (e.clientY / window.innerHeight) * 20;
+
+    const hero = document.querySelector(".hero");
+
+    if(hero){
+        hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    }
+});
