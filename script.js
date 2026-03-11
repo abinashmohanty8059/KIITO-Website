@@ -273,3 +273,43 @@ screenshots.forEach((img) => {
     img.style.transform = "perspective(500px) rotateX(0deg) rotateY(0deg)";
   });
 });
+// existing code
+const menuBtn = document.querySelector(".mobile-menu-btn");
+
+menuBtn.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.toggle("active");
+});
+
+
+// ↓↓↓ PASTE THE MAGNETIC BUTTON CODE BELOW THIS ↓↓↓
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((btn) => {
+
+    btn.addEventListener("mousemove", (e) => {
+
+        const rect = btn.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "translate(0px, 0px)";
+    });
+
+});
+const hero = document.querySelector(".hero");
+const light = document.querySelector(".hero-light");
+
+hero.addEventListener("mousemove",(e)=>{
+
+light.style.left = e.pageX + "px";
+light.style.top = e.pageY + "px";
+
+});
+
