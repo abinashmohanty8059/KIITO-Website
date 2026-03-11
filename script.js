@@ -226,3 +226,30 @@ document.addEventListener("mousemove", (e) => {
         hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
     }
 });
+
+// ==========================================
+// FLOATING SCREENSHOTS
+// ==========================================
+
+function floatScreenshots() {
+    const screenshots = document.querySelectorAll('img[src*="app-screenshot"]');
+
+    screenshots.forEach((img, index) => {
+        let pos = 0;
+        let direction = 1;
+
+        setInterval(() => {
+            pos += direction;
+
+            if (pos > 10 || pos < -10) {
+                direction *= -1;
+            }
+
+            img.style.transform = `translateY(${pos}px)`;
+        }, 50 + index * 10);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    floatScreenshots();
+});
