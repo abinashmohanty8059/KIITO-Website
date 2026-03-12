@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIITO – Intelligent Academic Assistant</title>
+    <meta name="description"
+        content="KIITO is a privacy-first, local-first academic assistant that bridges the gap between legacy university portals and modern mobile standards.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="loader-wrapper">
+        <div class="loader-tag">LAUNCHING KIITO....🚀</div>
+        <div class="loader-percentage" id="loader-percentage">0%</div>
+        <div class="loader-bar-container">
+            <div class="loader-bar" id="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="kiito.logo.gif" alt="KIITO Logo" class="logo-image">
+                <div class="logo-text-container">
+                    <span class="logo-text">KIITO</span>
+                    <span class="logo-subtitle">Intelligent Academic Assistant</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#tech" class="nav-link">Technology</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="https://play.google.com/store/apps/details?id=com.kito" target="_blank"
+                    rel="noopener noreferrer" class="nav-cta">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo logo-left">
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo logo-right">
+             <img src="kiito.logo.gif" alt="KIITO" class="floating-logo pos-1">
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo pos-2">
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo pos-3">
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo pos-4">
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo pos-5">
+            <img src="kiito.logo.gif" alt="KIITO" class="floating-logo pos-6">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge-wrapper">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Privacy-First • Local-First • Zero-Knowledge
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Your Academic Life,<br />
+                    <span class="gradient-text">Intelligently Organized</span>
+                </h1>
+                <p class="hero-description">
+                    KIITO bridges the gap between legacy university portals and modern mobile standards.
+                    Built on Clean Architecture with zero-knowledge privacy principles.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.kito" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Get on Play Store
+                    </a>
+                    <a href="#architecture" class="btn btn-secondary">
+                        Explore Architecture
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-logo">
+                <img src="kiito.logo.gif" alt="KIITO Logo" class="hero-logo-image">
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Kotlin</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Zero</div>
+                    <div class="stat-label">Server Storage</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Offline</div>
+                    <div class="stat-label">First Design</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Screenshots -->
+        <div class="app-showcase">
+            <!-- Feature 1: Personalized Dashboard -->
+            <div class="feature-showcase">
+                <div class="showcase-content">
+                    <div class="showcase-icon">📊</div>
+                    <h3 class="showcase-title">Personalized Dashboard</h3>
+                    <p class="showcase-description">Track what matters most this semester. View your schedule,
+                        attendance, and upcoming exams at a glance.</p>
+                </div>
+                <div class="phone-mockup">
+                    <img src="app-screenshot-4.png" alt="KIITO Home Dashboard">
+                </div>
+            </div>
+
+            <!-- Feature 2: Track Attendance -->
+            <div class="feature-showcase reverse">
+                <div class="showcase-content">
+                    <div class="showcase-icon">📈</div>
+                    <h3 class="showcase-title">Track Attendance</h3>
+                    <p class="showcase-description">Real-time attendance updates. See how many more classes to reach
+                        that 75%.</p>
+                </div>
+                <div class="phone-mockup">
+                    <img src="app-screenshot-1.png" alt="KIITO Schedule View">
+                </div>
+            </div>
+
+            <!-- Feature 3: Analyze Stats -->
+            <div class="feature-showcase">
+                <div class="showcase-content">
+                    <div class="showcase-icon">📱</div>
+                    <h3 class="showcase-title">Widget Support</h3>
+                    <p class="showcase-description">Access your schedule without opening the app. Glance widgets keep
+                        you informed on your home screen.</p>
+                </div>
+                <div class="phone-mockup">
+                    <img src="app-screenshot-5.png" alt="KIITO Widget View">
+                </div>
+            </div>
+
+            <!-- Feature 4: Your Timetable -->
+            <div class="feature-showcase reverse">
+                <div class="showcase-content">
+                    <div class="showcase-icon">📅</div>
+                    <h3 class="showcase-title">Your Timetable</h3>
+                    <p class="showcase-description">Find your current semester timetable along with room number. Never
+                        miss a class.</p>
+                </div>
+                <div class="phone-mockup">
+                    <img src="app-screenshot-3.png" alt="KIITO Schedule Alternative">
+                </div>
+            </div>
+
+            <!-- Feature 5: Faculty Directory -->
+            <div class="feature-showcase">
+                <div class="showcase-content">
+                    <div class="showcase-icon">👨‍🏫</div>
+                    <h3 class="showcase-title">Faculty Directory</h3>
+                    <p class="showcase-description">Complete faculty information with schedules, contact details, and
+                        office hours at your fingertips.</p>
+                </div>
+                <div class="phone-mockup">
+                    <img src="app-screenshot-2.png" alt="KIITO Faculty Details">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <span class="section-tag">CAPABILITIES</span>
+            <h2 class="section-title">Engineering Highlights</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Secure Direct-Link Integration</h3>
+                <p class="feature-description">
+                    Custom engine establishes encrypted sessions with SAP portals.
+                    Advanced parsing transforms raw data into structured objects in milliseconds.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">OkHttp</span>
+                    <span class="tech-tag">Encrypted</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Offline-First Persistence</h3>
+                <p class="feature-description">
+                    Local device as source of truth. Room database for complex queries,
+                    Proto DataStore for type-safe preferences.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Room</span>
+                    <span class="tech-tag">Proto DataStore</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Intelligent Background Sync</h3>
+                <p class="feature-description">
+                    WorkManager for reliable background tasks. Smart scheduling optimized
+                    for network conditions and battery conservation.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">WorkManager</span>
+                    <span class="tech-tag">AlarmManager</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Clean Architecture + MVVM</h3>
+                <p class="feature-description">
+                    Strict separation of concerns across Presentation, Domain, and Data layers.
+                    Reactive state management with Jetpack Compose.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Compose</span>
+                    <span class="tech-tag">Hilt</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Comprehensive Academic Suite</h3>
+                <p class="feature-description">
+                    Smart calendar, exam central, faculty directory, and personalized
+                    attendance alerts. Your entire academic life in one app.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Glance Widgets</span>
+                    <span class="tech-tag">Material 3</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Modern UI with Compose</h3>
+                <p class="feature-description">
+                    100% Kotlin declarative UI. Lottie animations, Haze glassmorphism,
+                    and performance-optimized widgets for delightful interactions.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Lottie</span>
+                    <span class="tech-tag">Haze</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture-section">
+        <div class="section-header">
+            <span class="section-tag">FOUNDATION</span>
+            <h2 class="section-title">Architectural Excellence</h2>
+        </div>
+
+        <div class="architecture-diagram">
+            <div class="arch-layer presentation">
+                <div class="layer-header">
+                    <span class="layer-icon">🎨</span>
+                    <h3>Presentation Layer</h3>
+                </div>
+                <div class="layer-content">
+                    <p>Jetpack Compose + Material 3</p>
+                    <p>MVVM Pattern</p>
+                    <p>Reactive State Management</p>
+                </div>
+            </div>
+
+            <div class="arch-arrow">↓</div>
+
+            <div class="arch-layer domain">
+                <div class="layer-header">
+                    <span class="layer-icon">⚙️</span>
+                    <h3>Domain Layer</h3>
+                </div>
+                <div class="layer-content">
+                    <p>Pure Kotlin Business Logic</p>
+                    <p>Use Cases (AppSync, Attendance)</p>
+                    <p>Framework Independent</p>
+                </div>
+            </div>
+
+            <div class="arch-arrow">↓</div>
+
+            <div class="arch-layer data">
+                <div class="layer-header">
+                    <span class="layer-icon">💾</span>
+                    <h3>Data Layer</h3>
+                </div>
+                <div class="layer-content">
+                    <p>Repository Pattern</p>
+                    <p>Room Database + DataStore</p>
+                    <p>Network Sources (SAP, Supabase)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="privacy-manifesto">
+            <div class="manifesto-icon">🔒</div>
+            <h3>Privacy & Security Manifesto</h3>
+            <div class="manifesto-grid">
+                <div class="manifesto-item">
+                    <strong>Zero-Knowledge Architecture</strong>
+                    <p>Your credentials never touch our servers</p>
+                </div>
+                <div class="manifesto-item">
+                    <strong>Ephemeral Credentials</strong>
+                    <p>Passwords used only for active sessions</p>
+                </div>
+                <div class="manifesto-item">
+                    <strong>No Commercial Tracking</strong>
+                    <p>No analytics, no behavioral trackers</p>
+                </div>
+                <div class="manifesto-item">
+                    <strong>Sandboxed Storage</strong>
+                    <p>All data in app's private sandbox</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section id="tech" class="tech-section">
+        <div class="section-header">
+            <span class="section-tag">STACK</span>
+            <h2 class="section-title">Technology Arsenal</h2>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-category">
+                <h3 class="tech-category-title">Language</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Kotlin 2.0+</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">UI Toolkit</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Jetpack Compose</span>
+                    <span class="tech-item">Material 3</span>
+                    <span class="tech-item">Glance Widgets</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Architecture</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Clean Architecture</span>
+                    <span class="tech-item">MVVM</span>
+                    <span class="tech-item">Repository Pattern</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Dependency Injection</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Hilt (Dagger)</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Asynchronous</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Kotlin Coroutines</span>
+                    <span class="tech-item">Flow</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Networking</h3>
+                <div class="tech-items">
+                    <span class="tech-item">OkHttp</span>
+                    <span class="tech-item">Retrofit</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Persistence</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Room (SQLite)</span>
+                    <span class="tech-item">Proto DataStore</span>
+                    <span class="tech-item">DataStore Preferences</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Background Jobs</h3>
+                <div class="tech-items">
+                    <span class="tech-item">WorkManager</span>
+                    <span class="tech-item">AlarmManager</span>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Security</h3>
+                <div class="tech-items">
+                    <span class="tech-item">Android Keystore</span>
+                    <span class="tech-item">Encrypted Shared Preferences</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Developer Team -->
+    <section id="team" class="team-section">
+        <div class="section-header">
+            <span class="section-tag">TEAM</span>
+            <h2 class="section-title">Core Developers</h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="dev-card">
+                <div class="dev-image">
+                    <img src="s.jpeg" alt="Subham Shah">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-name">Subham Shah</h3>
+                    <p class="dev-role">Core Developer</p>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="dev-image">
+                    <img src="sh.jpeg" alt="Shanu">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-name">Shanu</h3>
+                    <p class="dev-role">Core Developer</p>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="dev-image">
+                    <img src="p.jpeg" alt="Pratyusha Mohanty">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-name">Pratyusha Mohanty</h3>
+                    <p class="dev-role">Core Developer</p>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="dev-image">
+                    <img src="y.jpeg" alt="Yogisha Rani">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-name">Yogisha Rani</h3>
+                    <p class="dev-role">Core Developer</p>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="dev-image">
+                    <img src="a.jpeg" alt="Abinash Mohanty">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-name">Abinash Mohanty</h3>
+                    <p class="dev-role">Core Developer</p>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <div class="dev-image">
+                    <img src="h.jpeg" alt="Harsh Singh">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-name">Harsh Singh</h3>
+                    <p class="dev-role">Core Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3 class="footer-logo">KIITO</h3>
+                <p class="footer-tagline">Intelligent Academic Assistant</p>
+                <p class="footer-copyright">© 2026 KIITO. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#architecture">Architecture</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.kito" target="_blank" rel="noopener noreferrer">Download</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#tech">Technology</a>
+                    <a href="#team">Team</a>
+                    <a href="https://github.com/abinashmohanty8059/KIITO-Website" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">License</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
