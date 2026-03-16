@@ -16,6 +16,16 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-ring loader-ring-inner"></div>
+            <img src="kiito-logo.png" alt="KIITO" class="loader-logo">
+        </div>
+        <div class="loader-text">Loading KIITO...</div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav-container">
         <div class="nav-content">
@@ -55,116 +65,157 @@
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
         </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Privacy-First • Local-First • Zero-Knowledge
-            </div>
-            <h1 class="hero-title">
-                Your Academic Life,<br />
-                <span class="gradient-text">Intelligently Organized</span>
-            </h1>
-            <p class="hero-description">
-                KIITO bridges the gap between legacy university portals and modern mobile standards.
-                Built on Clean Architecture with zero-knowledge privacy principles.
-            </p>
-            <div class="hero-actions">
-                <a href="https://play.google.com/store/apps/details?id=com.kito" target="_blank"
-                    class="btn btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Get on Play Store
-                </a>
-                <a href="#architecture" class="btn btn-secondary">
-                    Explore Architecture
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Kotlin</div>
+        <div class="hero-content grid-layout">
+            <div class="hero-text-column">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Privacy-First • Local-First • Zero-Knowledge
                 </div>
-                <div class="stat">
-                    <div class="stat-value">Zero</div>
-                    <div class="stat-label">Server Storage</div>
+                <h1 class="hero-title">
+                    Your Academic Life,<br />
+                    <span class="gradient-text">Intelligently Organized</span>
+                </h1>
+                <p class="hero-description">
+                    KIITO bridges the gap between legacy university portals and modern mobile standards.
+                    Built on Clean Architecture with zero-knowledge privacy principles.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.kito" target="_blank"
+                        class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Get on Play Store
+                    </a>
+                    <a href="#architecture" class="btn btn-secondary">
+                        Explore Architecture
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
                 </div>
-                <div class="stat">
-                    <div class="stat-value">Offline</div>
-                    <div class="stat-label">First Design</div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Kotlin</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Zero</div>
+                        <div class="stat-label">Server Storage</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Offline</div>
+                        <div class="stat-label">First Design</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-video-column">
+                <div class="promo-video-wrapper">
+                    <video id="promoVideo" autoplay muted loop playsinline class="promo-video">
+                        <source src="Whisk_ijn2qtnyugo2ito50snjvwoty2n1qtllnznm1in.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button id="muteToggleBtn" class="mute-btn" aria-label="Toggle Sound">
+                        <!-- Muted icon (default) -->
+                        <svg id="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                        <!-- Unmuted icon (hidden default) -->
+                        <svg id="icon-unmuted" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" style="display:none;">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- App Screenshots -->
-        <div class="app-showcase">
-            <!-- Feature 1: Personalized Dashboard -->
-            <div class="feature-showcase">
-                <div class="showcase-content">
-                    <div class="showcase-icon">📊</div>
-                    <h3 class="showcase-title">Personalized Dashboard</h3>
-                    <p class="showcase-description">Track what matters most this semester. View your schedule,
-                        attendance, and upcoming exams at a glance.</p>
+        <!-- 3D App Showcase Cards -->
+        <div class="showcase-3d-container">
+            <div class="showcase-3d-grid">
+                <!-- Card 1 -->
+                <div class="card-3d" data-tilt>
+                    <div class="card-3d-inner">
+                        <div class="card-3d-image">
+                            <img src="app-screenshot-4.png" alt="KIITO Home Dashboard">
+                        </div>
+                        <div class="card-3d-content">
+                            <span class="card-3d-icon">📊</span>
+                            <h3 class="card-3d-title">Personalized Dashboard</h3>
+                            <p class="card-3d-desc">Track what matters most this semester. View your schedule,
+                                attendance, and upcoming exams at a glance.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="phone-mockup">
-                    <img src="app-screenshot-4.png" alt="KIITO Home Dashboard">
-                </div>
-            </div>
 
-            <!-- Feature 2: Track Attendance -->
-            <div class="feature-showcase reverse">
-                <div class="showcase-content">
-                    <div class="showcase-icon">📈</div>
-                    <h3 class="showcase-title">Track Attendance</h3>
-                    <p class="showcase-description">Real-time attendance updates. See how many more classes to reach
-                        that 75%.</p>
+                <!-- Card 2 -->
+                <div class="card-3d" data-tilt>
+                    <div class="card-3d-inner">
+                        <div class="card-3d-image">
+                            <img src="app-screenshot-1.png" alt="KIITO Schedule View">
+                        </div>
+                        <div class="card-3d-content">
+                            <span class="card-3d-icon">📈</span>
+                            <h3 class="card-3d-title">Track Attendance</h3>
+                            <p class="card-3d-desc">Real-time attendance updates. See how many more classes to reach
+                                that 75%.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="phone-mockup">
-                    <img src="app-screenshot-1.png" alt="KIITO Schedule View">
-                </div>
-            </div>
 
-            <!-- Feature 3: Analyze Stats -->
-            <div class="feature-showcase">
-                <div class="showcase-content">
-                    <div class="showcase-icon">📱</div>
-                    <h3 class="showcase-title">Widget Support</h3>
-                    <p class="showcase-description">Access your schedule without opening the app. Glance widgets keep
-                        you informed on your home screen.</p>
+                <!-- Card 3 -->
+                <div class="card-3d" data-tilt>
+                    <div class="card-3d-inner">
+                        <div class="card-3d-image">
+                            <img src="app-screenshot-5.png" alt="KIITO Widget View">
+                        </div>
+                        <div class="card-3d-content">
+                            <span class="card-3d-icon">📱</span>
+                            <h3 class="card-3d-title">Widget Support</h3>
+                            <p class="card-3d-desc">Access your schedule without opening the app. Glance widgets keep
+                                you informed on your home screen.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="phone-mockup">
-                    <img src="app-screenshot-5.png" alt="KIITO Widget View">
-                </div>
-            </div>
 
-            <!-- Feature 4: Your Timetable -->
-            <div class="feature-showcase reverse">
-                <div class="showcase-content">
-                    <div class="showcase-icon">📅</div>
-                    <h3 class="showcase-title">Your Timetable</h3>
-                    <p class="showcase-description">Find your current semester timetable along with room number. Never
-                        miss a class.</p>
+                <!-- Card 4 -->
+                <div class="card-3d" data-tilt>
+                    <div class="card-3d-inner">
+                        <div class="card-3d-image">
+                            <img src="app-screenshot-3.png" alt="KIITO Schedule Alternative">
+                        </div>
+                        <div class="card-3d-content">
+                            <span class="card-3d-icon">📅</span>
+                            <h3 class="card-3d-title">Your Timetable</h3>
+                            <p class="card-3d-desc">Find your current semester timetable along with room number. Never
+                                miss a class.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="phone-mockup">
-                    <img src="app-screenshot-3.png" alt="KIITO Schedule Alternative">
-                </div>
-            </div>
 
-            <!-- Feature 5: Faculty Directory -->
-            <div class="feature-showcase">
-                <div class="showcase-content">
-                    <div class="showcase-icon">👨‍🏫</div>
-                    <h3 class="showcase-title">Faculty Directory</h3>
-                    <p class="showcase-description">Complete faculty information with schedules, contact details, and
-                        office hours at your fingertips.</p>
-                </div>
-                <div class="phone-mockup">
-                    <img src="app-screenshot-2.png" alt="KIITO Faculty Details">
+                <!-- Card 5 -->
+                <div class="card-3d" data-tilt>
+                    <div class="card-3d-inner">
+                        <div class="card-3d-image">
+                            <img src="app-screenshot-2.png" alt="KIITO Faculty Details">
+                        </div>
+                        <div class="card-3d-content">
+                            <span class="card-3d-icon">👨‍🏫</span>
+                            <h3 class="card-3d-title">Faculty Directory</h3>
+                            <p class="card-3d-desc">Complete faculty information with schedules, contact details, and
+                                office hours at your fingertips.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,16 @@
-// ==========================================
-// KIITO Website JavaScript
-// ==========================================
+window.addEventListener('load', () => {
+    // Hide preloader once everything is fully loaded
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Keep loading spinner visible for 4 seconds for aesthetic purposes
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800); // Matches the CSS transition duration
+        }, 4000);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll for navigation links
@@ -11,7 +21,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Active navigation highlighting
     initActiveNav();
+
+    // Initialize Hero Video logic 
+    initHeroVideo();
 });
+
+// ==========================================
+// HERO PROMO VIDEO
+// ==========================================
+function initHeroVideo() {
+    const video = document.getElementById('promoVideo');
+    const toggleBtn = document.getElementById('muteToggleBtn');
+    const iconMuted = document.getElementById('icon-muted');
+    const iconUnmuted = document.getElementById('icon-unmuted');
+
+    if (!video || !toggleBtn) return;
+
+    toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Toggle the muted state
+        video.muted = !video.muted;
+        
+        // Swap the icons
+        if (video.muted) {
+            iconMuted.style.display = 'block';
+            iconUnmuted.style.display = 'none';
+        } else {
+            iconMuted.style.display = 'none';
+            iconUnmuted.style.display = 'block';
+        }
+    });
+}
 
 // ==========================================
 // SMOOTH SCROLL
@@ -214,4 +255,47 @@ function initMobileMenu() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
+    init3DCardTilt();
 });
+
+// ==========================================
+// 3D CARD TILT EFFECT
+// ==========================================
+
+function init3DCardTilt() {
+    const cards = document.querySelectorAll('.card-3d');
+    
+    // Only apply hover effects on non-touch devices
+    if (window.matchMedia("(hover: hover)").matches) {
+        cards.forEach(card => {
+            card.addEventListener('mousemove', handleMouseMove);
+            card.addEventListener('mouseleave', handleMouseLeave);
+        });
+    }
+
+    function handleMouseMove(e) {
+        const card = this;
+        const rect = card.getBoundingClientRect();
+        
+        // Calculate mouse position relative to card center
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate rotation (max rotation of 10 degrees)
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    }
+
+    function handleMouseLeave() {
+        this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        // Reset transition to ensure smooth return
+        this.style.transition = 'transform 0.5s ease';
+        setTimeout(() => {
+            this.style.transition = 'transform 0.1s';
+        }, 500);
+    }
+}
