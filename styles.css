@@ -472,48 +472,33 @@ img {
     margin-top: 0.25rem;
 }
 
-/* App Showcase */
-.app-showcase {
+/* App Showcase with Sticky Canvas */
+.app-showcase-container {
     position: relative;
-    z-index: 1;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: var(--spacing-3xl) auto 0;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+}
+
+.scrolling-features {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-3xl);
+    gap: 40vh;
+    /* Space out features to force long scrolling */
+    padding-top: 20vh;
+    padding-bottom: 20vh;
 }
 
 .feature-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3xl);
-    align-items: center;
-    padding: var(--spacing-2xl);
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-subtle);
     border-radius: 24px;
+    padding: var(--spacing-2xl);
     transition: all 0.4s ease;
-    animation: fadeInUp 0.8s ease-out backwards;
-}
-
-.feature-showcase:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.feature-showcase:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.feature-showcase:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.feature-showcase:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.feature-showcase:nth-child(5) {
-    animation-delay: 0.5s;
 }
 
 .feature-showcase:hover {
@@ -523,19 +508,15 @@ img {
     box-shadow: var(--shadow-glow);
 }
 
-.feature-showcase.reverse {
-    grid-template-columns: 1fr 1fr;
-}
-
-.feature-showcase.reverse .showcase-content {
-    order: 2;
-}
-
-.feature-showcase.reverse .phone-mockup {
-    order: 1;
-}
-
 .showcase-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.showcase-text {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
@@ -563,28 +544,71 @@ img {
     font-family: var(--font-mono);
 }
 
-.phone-mockup {
+.feature-inline-img {
+    margin-top: var(--spacing-md);
+    border-radius: 16px;
     width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-    border-radius: 30px;
+    max-width: 280px;
+    box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-medium);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    animation: rotating3D 12s linear infinite;
+}
+
+@keyframes rotating3D {
+    0% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(5deg) translateZ(0);
+    }
+    50% {
+        transform: perspective(1000px) rotateY(180deg) rotateX(-5deg) translateZ(30px);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg) rotateX(5deg) translateZ(0);
+    }
+}
+
+.feature-inline-img:hover {
+    animation-play-state: paused;
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05) translateZ(50px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 0 2px var(--accent-primary);
+}
+
+.sticky-canvas-container {
+    flex: 1;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 3px solid var(--border-medium);
-    background: var(--bg-secondary);
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
-.phone-mockup:hover {
-    transform: scale(1.05);
-    box-shadow: var(--shadow-glow);
-    border-color: var(--accent-primary);
-}
-
-.phone-mockup img {
+#hero-lightpass {
     width: 100%;
+    max-width: 500px;
     height: auto;
-    display: block;
+    object-fit: contain;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .app-showcase-container {
+        flex-direction: column;
+    }
+
+    .sticky-canvas-container {
+        position: relative;
+        height: 60vh;
+        width: 100%;
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .scrolling-features {
+        gap: var(--spacing-xl);
+        padding-top: 0;
+        padding-bottom: var(--spacing-3xl);
+    }
 }
 
 /* ==========================================

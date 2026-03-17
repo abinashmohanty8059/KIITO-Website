@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Active navigation highlighting
     initActiveNav();
+
+    // Phone canvas scroll animation
+    initPhoneAnimation();
 });
 
 // ==========================================
@@ -215,3 +218,89 @@ function initMobileMenu() {
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
 });
+
+// ==========================================
+// SCROLL ANIMATION FOR PHONE
+// ==========================================
+
+function initPhoneAnimation() {
+    const canvas = document.getElementById("hero-lightpass");
+    if (!canvas) return;
+
+    const context = canvas.getContext("2d", { alpha: false });
+    const section = document.getElementById("app-showcase-container");
+    
+    // Smooth transition frames from 'siu' directory
+    const frameCount = 120;
+
+    const currentFrame = index => (
+        `siu/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
+    );
+
+    const images = [];
+    let isCanvasInitialized = false;
+
+    // Preload all images for smooth playback
+    for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+        images.push(img);
+
+        // When the first image loads, set canvas dimensions and draw it
+        if (i === 0) {
+            img.onload = () => {
+                if (!isCanvasInitialized) {
+                    canvas.width = img.width || 1080;
+                    canvas.height = img.height || 1920;
+                    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    isCanvasInitialized = true;
+                }
+            };
+        }
+    }
+
+    const updateImage = index => {
+        if (images[index] && images[index].complete && isCanvasInitialized) {
+            context.drawImage(images[index], 0, 0, canvas.width, canvas.height);
+        }
+    };
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const scrollPosition = window.scrollY;
+
+                // Calculate scroll fraction, removing viewport height from total scroll distance
+                let scrollFraction = (scrollPosition - sectionTop) / (sectionHeight - window.innerHeight);
+
+                // Clamp the fraction between 0 and 1
+                const clampedFraction = Math.max(0, Math.min(1, scrollFraction));
+
+                // Determine the corresponding frame index
+                const frameIndex = Math.min(
+                    frameCount - 1,
+                    Math.floor(clampedFraction * frameCount)
+                );
+
+                updateImage(frameIndex);
+
+                // Trigger text overlay near the end of the animation
+                const overlay = document.querySelector('.animation-text-overlay');
+                if (overlay) {
+                    if (clampedFraction > 0.8) {
+                        overlay.classList.add('visible');
+                    } else {
+                        overlay.classList.remove('visible');
+                    }
+                }
+
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
